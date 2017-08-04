@@ -12,7 +12,9 @@
   </thead>
   <tbody>
   <tr *ngFor="let p of results">
-    <td>{{p.name}}</td>
+    <td> <a [routerLink]="['/artist']">{{p.name}}</a>
+
+    </td>
     <td>{{p.duration}}</td>
     <td>{{p.artist.mbid}}</td>
     <td>{{p.playcount}}</td>
