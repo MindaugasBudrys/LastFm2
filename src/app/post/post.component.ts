@@ -8,10 +8,11 @@ import {PostService} from '../post.service';
 })
 export class PostComponent implements OnInit {
   results: Array<Post>;
+
   constructor(private postService: PostService) { }
   ngOnInit() {
     this.postService.getAll().subscribe(
-      data => { this.results = data; },
+      data => { this.results = data.tracks.track; },
       error => console.log(error)
     );
   }

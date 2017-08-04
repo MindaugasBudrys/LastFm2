@@ -3,6 +3,7 @@
   <tr>
     <th>Name</th>
     <th>Duration</th>
+    <th>Artist MBID</th>
     <th>Playcount</th>
     <th>Listeners</th>
     <th>Mbid</th>
@@ -10,9 +11,10 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let p of results; let i=index">
+  <tr *ngFor="let p of results">
     <td>{{p.name}}</td>
     <td>{{p.duration}}</td>
+    <td>{{p.artist.mbid}}</td>
     <td>{{p.playcount}}</td>
     <td>{{p.listeners}}</td>
     <td>{{p.mbid}}</td>
