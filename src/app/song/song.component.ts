@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Song} from '../song';
-import {SongService} from '../Song.service';
+import {SongService} from '../song.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
