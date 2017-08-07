@@ -1,3 +1,21 @@
-<p>
-  artist component works..
-</p>
+<table *ngIf="results" border="1">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Mbid</th>
+    <th>Artist URL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of results">
+    <!--
+    <td> <a routerLink="/artist">{{p.name}} lol {{p.artist.mbid}} </a>
+
+    </td>
+    -->
+    <td>{{p.name}}</td>
+    <td>{{p.mbid}}</td>
+    <td>{{p.url}}</td>
+  </tr>
+  </tbody>
+</table>
