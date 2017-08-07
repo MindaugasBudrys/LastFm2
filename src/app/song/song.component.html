@@ -1,3 +1,22 @@
-<p>
-  song works!
-</p>
+LOL {{name}}
+<table *ngIf="song" border="1">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Mbid</th>
+    <th>Track URL</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <!--
+    <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.name}} lol {{p.artist.mbid}} </a>
+
+    </td>
+    -->
+    <td>{{track.name}}</td>
+    <td>{{track.mbid}}</td>
+    <td>{{track.url}}</td>
+  </tr>
+  </tbody>
+</table>

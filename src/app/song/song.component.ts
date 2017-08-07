@@ -13,7 +13,7 @@ export class SongComponent implements OnInit {
   public artist_name: string;
   public song_name: string;
 
-  song: Song;
+  public song: Song;
 
   constructor(private songService: SongService,
               private activatedRoute: ActivatedRoute) { }
@@ -25,7 +25,7 @@ export class SongComponent implements OnInit {
       this.song_name = params['song_name'];
 
         this.songService.getAll(this.artist_name, this.song_name).subscribe(
-        data => { this.song = data.track; },
+        data => { this.song = data; },
         error => console.log(error)
       );
     });
