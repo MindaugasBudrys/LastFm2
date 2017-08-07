@@ -5,7 +5,7 @@ export class Post {
   listeners: number;
   mbid: string;
   url: string;
-  artistmbid: string;
+  artist_mbid: string;
 
   constructor(obj?: any) {
     this.name = obj && obj.name || null;
@@ -14,6 +14,6 @@ export class Post {
     this.listeners = obj && obj.listeners || null;
     this.mbid = obj && obj.mbid || null;
     this.url = obj && obj.url || null;
-    this.artistmbid = obj && obj.artistmbid || null;
+    this.artist_mbid = obj && obj.artistmbid || null;
   }
 }

@@ -12,22 +12,21 @@ export class ArtistComponent implements OnInit {
 
   public id;
 
-  results: Artist;
+  artist: Artist;
 
   constructor(private artistService: ArtistService,
               private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
 
-    /*
+    
     this.activatedRoute.params.subscribe(params => {
-      this.id = params['SALES_OPPORTUNITY_ID'];
+      this.id = params['artist_mbid'];
+        this.artistService.getAll(this.id).subscribe(
+        data => { this.artist = data.artist; },
+        error => console.log(error)
+      );
     });
-    */
-
-    this.artistService.getAll().subscribe(
-      data => { this.results = data.artist; },
-      error => console.log(error)
-    );
+    
   }
 
 }

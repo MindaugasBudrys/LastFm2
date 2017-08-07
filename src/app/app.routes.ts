@@ -8,7 +8,7 @@ export const routes: Routes = [
   { path: '', component: PostComponent },
   //{ path: 'artist/:ARTIST_ID', component: ArtistComponent }
 
-  { path: 'artist', component: ArtistComponent }
+  { path: 'artist/:artist_mbid', component: ArtistComponent }
 ];
 
 

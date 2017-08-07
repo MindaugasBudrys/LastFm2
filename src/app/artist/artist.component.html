@@ -1,4 +1,4 @@
-<table *ngIf="results" border="1">
+<table *ngIf="artist" border="1">
   <thead>
   <tr>
     <th>Name</th>
@@ -7,15 +7,15 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let p of results">
+  <tr>
     <!--
-    <td> <a routerLink="/artist">{{p.name}} lol {{p.artist.mbid}} </a>
+    <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.name}} lol {{p.artist.mbid}} </a>
 
     </td>
     -->
-    <td>{{p.name}}</td>
-    <td>{{p.mbid}}</td>
-    <td>{{p.url}}</td>
+    <td>{{artist.name}}</td>
+    <td>{{artist.mbid}}</td>
+    <td>{{artist.url}}</td>
   </tr>
   </tbody>
 </table>
