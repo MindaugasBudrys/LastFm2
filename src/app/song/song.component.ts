@@ -1,16 +1,35 @@
 import { Component, OnInit } from '@angular/core';
+import {Song} from '../Song';
+import {SongService} from '../Song.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-song',
   templateUrl: './song.component.html',
   styleUrls: ['./song.component.css']
 })
-//http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=baa6c1bc56fb80f22b9dec1e9b0b2352&artist=Linkin+Park&track=One+Step+Closer&format=json
 export class SongComponent implements OnInit {
 
-  constructor() { }
+  public artist_name: string;
+  public song_name: string;
 
+  song: Song;
+
+  constructor(private songService: SongService,
+              private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
+
+    
+    this.activatedRoute.params.subscribe(params => {
+      this.artist_name = params['artist_name'];
+      this.song_name = params['song_name'];
+
+        this.songService.getAll(this.artist_name, this.song_name).subscribe(
+        data => { this.song = data.track; },
+        error => console.log(error)
+      );
+    });
+    
   }
 
 }

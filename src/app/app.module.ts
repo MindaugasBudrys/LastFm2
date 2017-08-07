@@ -8,7 +8,7 @@ import { PostComponent } from './post/post.component';
 
 import { HttpModule } from '@angular/http';
 import { ArtistComponent } from './artist/artist.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { SongComponent } from './song/song.component';
 
 @NgModule({

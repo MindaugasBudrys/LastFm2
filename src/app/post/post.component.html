@@ -15,7 +15,7 @@
   </thead>
   <tbody>
   <tr *ngFor="let p of results">
-    <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.name}} </a> </td>
+    <td> <a routerLink="/song/{{p.artist.name}}/{{p.name}}">{{p.name}} </a> </td>
 
 
     <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.artist.name}} </a> </td>
