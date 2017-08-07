@@ -6,7 +6,16 @@ import 'rxjs/add/operator/map';
 export class SongService {
   constructor(private http: Http) { }
   getAll(artist_name: string, song_name: string) {
-    return this.http.get('http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=baa6c1bc56fb80f22b9dec1e9b0b2352&artist=' + artist_name + '&track= ' + song_name + '&format=json')
+    
+    var str1 = artist_name;
+    var str2 = song_name;
+    var replaced_artist_name = str1.split(' ').join('+');
+    var replaced_song_name = str2.split(' ').join('+');
+    
+    //console.log ('LINK TRYING TO BE OPENED: ' +  'http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=baa6c1bc56fb80f22b9dec1e9b0b2352&artist=' + replaced1 + '&track=' + replaced2 + '&format=json');
+    
+
+    return this.http.get('http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=baa6c1bc56fb80f22b9dec1e9b0b2352&artist=' + replaced_artist_name + '&track=' + replaced_song_name + '&format=json')
       .map((res: Response) => res.json());
   }
 }

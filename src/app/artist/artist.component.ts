@@ -12,7 +12,7 @@ export class ArtistComponent implements OnInit {
 
   public id;
 
-  public artist: Artist;
+  public artist_info: Artist;
 
   constructor(private artistService: ArtistService,
               private activatedRoute: ActivatedRoute) { }
@@ -22,7 +22,7 @@ export class ArtistComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       this.id = params['artist_mbid'];
         this.artistService.getAll(this.id).subscribe(
-        data => { this.artist = data.artist; },
+        data => { this.artist_info = data.artist; },
         error => console.log(error)
       );
     });
