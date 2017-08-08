@@ -1,35 +1,4 @@
-<table *ngIf="results" border="1">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Artist name</th>
-    <!--
-    <th>Artist Mbid</th>
-    <th>Mbid</th>
-        -->
-    <th>Playcount</th>
-    <th>Listeners</th>
-
-    <th>URL</th>
-
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let p of results">
-    <td> <a routerLink="/song/{{p.artist.name}}/{{p.name}}">{{p.name}} </a> </td>
-
-    <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.artist.name}} </a> </td>
-
-    <!--
-    <td>{{p.artist.mbid}}</td>
-    <td>{{p.mbid}}</td>
-        -->
-    <td>{{p.playcount}}</td>
-    <td>{{p.listeners}}</td>
-
-    <td>{{p.url}}</td>
-
-
-  </tr>
-  </tbody>
-</table>
+<app-song-child *ngFor="let p of results"
+      [p.artist.name]="artist_name"
+      [p.name]="song_name">
+    </app-song-child>

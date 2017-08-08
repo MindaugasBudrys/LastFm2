@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PostComponent } from './post/post.component';
 import { ArtistComponent } from './artist/artist.component';
 import { SongComponent } from './song/song.component';
+import { SongChildComponent } from './song-child/song-child.component';
 
 
 
@@ -20,7 +21,8 @@ import { SongComponent } from './song/song.component';
     AppComponent,
     PostComponent,
     ArtistComponent,
-    SongComponent
+    SongComponent,
+    SongChildComponent
   ],
   imports: [
     BrowserModule,
