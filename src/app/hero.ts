@@ -1,12 +1,13 @@
 export class Hero {
-  name: string;
-  lastname: string;
+  name: string = '';
+  lastname: string = '';
 }
 
 export const HEROES = [
   {name: 'Linkin Park', lastname: 'In The End'},
   {name: 'Linkin Park', lastname: 'Numb'},
-  {name: 'Linkin Park', lastname: 'Breaking the Habit'}
+  {name: 'Linkin Park', lastname: 'Breaking the Habit'},
+  {name: 'Kendrick Lamar', lastname: 'HUMBLE.'}
 ];
 
 
