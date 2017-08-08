@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Hero } from '../hero';
+import {Song} from '../song/song';
+import {SongService} from '../song/song.service';
 
 @Component({
   selector: 'app-song-child',
@@ -8,16 +10,19 @@ import { Hero } from '../hero';
 })
 export class SongChildComponent implements OnInit {
 
-  
+
   @Input() hero: Hero;
   @Input('master') masterName: string;
 
+  public song_info: Song;
 
-
-  constructor() { }
+  constructor(private songService: SongService) { }
 
   ngOnInit() {
-
+    this.songService.getAll(this.hero.name, this.hero.lastname ).subscribe(
+        data => { this.song_info = data.track; },
+        error => console.log(error)
+    );
 
   }
 
