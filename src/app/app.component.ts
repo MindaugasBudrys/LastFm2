@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { PostService } from './post.service';
+import { PostService } from './post/post.service';
 import { PostComponent } from './post/post.component';
-import { ArtistService} from './artist.service';
+import { ArtistService} from './artist/artist.service';
 import { ArtistComponent} from './artist/artist.component';
-import { SongService } from './song.service';
+import { SongService } from './song/song.service';
 import { SongComponent } from './song/song.component'
 
 @Component({

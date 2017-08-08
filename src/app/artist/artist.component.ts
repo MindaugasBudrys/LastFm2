@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Artist} from '../artist';
-import {ArtistService} from '../artist.service';
+import {Artist} from './artist';
+import {ArtistService} from './artist.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({

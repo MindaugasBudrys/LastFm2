@@ -1,15 +1,14 @@
-Testing, table should be printed below?... 
-
-<!--
-NAME: {{song_info.name}}
--->
-
 <table *ngIf="song_info" border="1">
   <thead>
   <tr>
     <th>Name</th>
-    <th>Mbid</th>
+    <th>Artist</th>
     <th>Track URL</th>
+    <th>Duration</th>
+    <th>Listeners</th>
+    <th>Playcount</th>
+    <th>Album name</th>
+    <th>About</th>
   </tr>
   </thead>
   <tbody>
@@ -20,8 +19,13 @@ NAME: {{song_info.name}}
     </td>
     -->
     <td>{{song_info.name}}</td>
-    <td>{{song_info.mbid}}</td>
+    <td>{{song_info.artist.name}}</td>
     <td>{{song_info.url}}</td>
+    <td>{{song_info.duration}}</td>
+    <td>{{song_info.listeners}}</td>
+    <td>{{song_info.playcount}}</td>
+    <td>{{song_info.album.title}}</td>
+    <td>{{song_info.wiki.content}}</td>
   </tr>
   </tbody>
 </table>
