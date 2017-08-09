@@ -1,5 +1,5 @@
-<h2>{{master}} controls {{random_songs.length}} heroes</h2>
-    <app-song-child *ngFor="let p of random_songs"
-      [song]="p"
+<h2>{{master}} controls {{post_songs.length}} heroes</h2>
+    <app-song-child *ngFor="let p of post_songs"
+      [hero]="p"
       [masterName]="master">
     </app-song-child>
