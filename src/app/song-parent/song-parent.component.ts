@@ -9,7 +9,7 @@ import { RANDOM_SONGS } from '../hero';
 export class SongParentComponent implements OnInit {
 
     post_songs = RANDOM_SONGS;
-    master = 'Master';
+    master123 = 'THE ALMIGHTY MASTER';
 
 
   constructor() { }
