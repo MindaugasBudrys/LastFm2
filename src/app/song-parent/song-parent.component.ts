@@ -8,8 +8,12 @@ import { RANDOM_SONGS } from '../hero';
 })
 export class SongParentComponent implements OnInit {
 
-    post_songs = RANDOM_SONGS;
-    master123 = 'THE ALMIGHTY MASTER';
+
+    nameList = RANDOM_SONGS;
+
+
+    // nameList = "XD";
+    // name2 = 'THE ALMIGHTY MASTER';
 
 
   constructor() { }

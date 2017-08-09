@@ -1,4 +1,4 @@
- <table *ngIf="results" border="1">
+ <!-- <table *ngIf="results" border="1">
   <thead>
   <tr>
     <th>Name</th>
@@ -34,17 +34,23 @@
 
   </tr>
   </tbody>
-</table> 
+</table>  -->
 
 
-<!-- <ng-container *ngIf="results"> 
-    LOLOLOL {{results.length}}
-    <app-song-child *ngFor="let p of results"
-      [hero]="p"
-      [master]="master123">
-    </app-song-child>
+ <ng-container *ngIf="results"> 
+
+  <div *ngFor="let p of results">
+    {{p.name}} .... {{p.artist.name}}
+
+  </div>
+
+  LOL  xd
+  <h2> List contains: {{results.length}} songs and artists</h2>
+      <app-song-child *ngFor="let p of results"
+        [songToFind]="p">
+      </app-song-child>
 
 
 
 
-</ng-container> -->
+</ng-container> 

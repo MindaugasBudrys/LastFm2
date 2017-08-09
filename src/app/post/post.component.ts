@@ -8,7 +8,7 @@ import {PostService} from './post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  results: Array<Post>;
+  results = new Array<Post>();
 
   constructor(private postService: PostService) { }
   ngOnInit() {
