@@ -10,8 +10,8 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class SongComponent implements OnInit {
 
-  public artist_name: string;
-  public song_name: string;
+  public artist_name: string = '';
+  public song_name: string = '';
 
   public song_info: Song;
 

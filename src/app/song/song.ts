@@ -6,7 +6,7 @@ export class Song {
   duration: number = 0;
   listeners: number = 0;
   playcount: number = 0;
-  album_name: string = '';
+  title: string = '';
   wiki_content: string = '';
 
   constructor(obj?: any) {
@@ -17,7 +17,7 @@ export class Song {
     this.duration = obj && obj.duration || null;
     this.listeners = obj && obj.listeners || null;
     this.playcount = obj && obj.playcount || null;
-    this.album_name = obj && obj.album_name || null;
+    this.title = obj && obj.title || null;
     this.wiki_content = obj && obj.wiki_content || null;
   }
 }

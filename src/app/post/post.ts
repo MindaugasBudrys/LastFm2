@@ -1,5 +1,5 @@
 export class Post {
-  name: string;
+  name: string = '';
   duration: number;
   playcount: number;
   listeners: number;
