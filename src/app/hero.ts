@@ -10,11 +10,3 @@ export class Hero {
   }
 }
 
-
-
-export const HEROES = [
-  {artist_name: 'Linkin Park', song_name: 'In The End'},
-  {artist_name: 'Linkin Park', song_name: 'Numb'},
-  {artist_name: 'Linkin Park', song_name: 'Breaking the Habit'},
-  {artist_name: 'Kendrick Lamar', song_name: 'HUMBLE.'}
-];

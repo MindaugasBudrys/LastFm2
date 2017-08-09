@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HEROES } from '../hero';
+import { RANDOM_SONGS } from '../post/post';
 
 @Component({
   selector: 'app-song-parent',
@@ -8,7 +8,7 @@ import { HEROES } from '../hero';
 })
 export class SongParentComponent implements OnInit {
 
-    heroes = HEROES;
+    random_songs = RANDOM_SONGS;
     master = 'Master';
 
 
