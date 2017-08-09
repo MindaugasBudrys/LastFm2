@@ -1,3 +1,5 @@
+import {Artist} from '../artist/artist';
+
 export class Post {
   name: string = '';
   // duration: number = 0;
@@ -6,6 +8,7 @@ export class Post {
   // mbid: string = '';
   // url: string = '';
   // artist_mbid: string = '';
-  artist_name: string = '';
+
+  artist : Artist = new Artist();
 
 }

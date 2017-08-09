@@ -20,7 +20,7 @@ export class SongChildComponent implements OnInit {
   constructor(private songService: SongService) { }
 
   ngOnInit() {
-    this.songService.getAll(this.songToFind.artist_name, this.songToFind.name ).subscribe(
+    this.songService.getAll(this.songToFind.artist.name, this.songToFind.name ).subscribe(
         data => { this.song_info = data.track; },
         error => console.log(error)
     );
