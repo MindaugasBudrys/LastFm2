@@ -1,9 +1,9 @@
-<table *ngIf="results" border="1">
+ <table *ngIf="results" border="1">
   <thead>
   <tr>
     <th>Name</th>
     <th>Artist name</th>
-    <!--
+    
     <th>Artist Mbid</th>
     <th>Mbid</th>
 
@@ -12,7 +12,7 @@
 
     <th>URL</th>
 
-            -->
+            
 
   </tr>
   </thead>
@@ -22,7 +22,7 @@
 
     <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.artist.name}} </a> </td>
 
-    <!--
+    
     <td>{{p.artist.mbid}}</td>
     <td>{{p.mbid}}</td>
 
@@ -30,8 +30,21 @@
     <td>{{p.listeners}}</td>
 
     <td>{{p.url}}</td>
-        -->
+        
 
   </tr>
   </tbody>
-</table>
+</table> 
+
+
+<!-- <ng-container *ngIf="results"> 
+    LOLOLOL {{results.length}}
+    <app-song-child *ngFor="let p of results"
+      [hero]="p"
+      [master]="master123">
+    </app-song-child>
+
+
+
+
+</ng-container> -->
