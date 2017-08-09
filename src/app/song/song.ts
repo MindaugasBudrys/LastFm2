@@ -1,13 +1,17 @@
+import { Artist } from '../artist/artist';
+
 export class Song {
   name: string = '';
-  artist_name: string = '';
+  artist_name : string = new Artist().name;
   mbid: string = '';
   url: string = '';
   duration: number = 0;
   listeners: number = 0;
   playcount: number = 0;
-  title: string = '';
+  title : string = '';
   wiki_content: string = '';
+
+  
 
   constructor(obj?: any) {
     this.name = obj && obj.name || null;
@@ -19,5 +23,6 @@ export class Song {
     this.playcount = obj && obj.playcount || null;
     this.title = obj && obj.title || null;
     this.wiki_content = obj && obj.wiki_content || null;
+
   }
 }
