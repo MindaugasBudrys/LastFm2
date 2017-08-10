@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Hero } from '../hero';
 import {Song} from '../song/song';
 import {SongService} from '../song/song.service';
@@ -13,7 +13,7 @@ export class SongChildComponent implements OnInit {
 
 
   @Input() songToFind = new Post();
-  //@Input() artistToFind: string; // @Input('xxxxxx')    -   'xxxxxx' in song-parent.component.html
+  @Output() onClicked = new EventEmitter<boolean>();
 
   public song_info = new Song();
 
@@ -25,4 +25,11 @@ export class SongChildComponent implements OnInit {
         error => console.log(error)
     );
   }
+
+  clicked(toDisplay: boolean){
+    this.onClicked.emit(toDisplay);
+    console.log("BUTTON WAS CLICKED inside song-child component" + toDisplay);
+  }
+
+
 }

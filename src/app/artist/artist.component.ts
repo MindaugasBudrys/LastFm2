@@ -17,6 +17,8 @@ export class ArtistComponent implements OnInit {
   public artist_info: Artist;
   public topSongs = new Array<Song>();
 
+  public display: boolean = false;
+
   constructor(private artistService: ArtistService,
               private activatedRoute: ActivatedRoute) { }
   ngOnInit() {
@@ -36,9 +38,14 @@ export class ArtistComponent implements OnInit {
         data => { this.topSongs = data.toptracks.track.slice(0,5);  },
         error => console.log(error)
     );
-
+    
 
     
   }
+
+    onClicked(toDisplay: boolean) {
+      toDisplay ? this.display = true : this.display = false;
+      console.log('artist component event triggered');
+    }
 
 }
