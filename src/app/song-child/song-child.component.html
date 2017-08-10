@@ -1,4 +1,4 @@
 <ng-container *ngIf="song_info">
-<p>Song name: <strong><a routerLink="/song/{{song_info.artist.name}}/{{song_info.name}}">{{song_info.name}} </a></strong>
+Song name: <strong><a routerLink="/song/{{song_info.artist.name}}/{{song_info.name}}">{{song_info.name}} </a></strong>
     , artist: <strong><a routerLink="/artist/{{song_info.artist.mbid}}">{{song_info.artist.name}} </a> </strong>
-    <ng-container *ngIf="song_info.album">,  from album: <strong>{{song_info.album.title}}</strong> </ng-container></p></ng-container>
+    <ng-container *ngIf="song_info.album">,  from album: <strong>{{song_info.album.title}}</strong> </ng-container></ng-container>

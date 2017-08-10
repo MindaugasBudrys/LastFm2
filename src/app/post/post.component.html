@@ -46,11 +46,14 @@
   (this is post component)
 
   <h2> List contains: {{results.length}} songs and artists</h2>
-      <app-song-child *ngFor="let p of results"
+  <ol>
+    <li *ngFor="let p of results">
+      
+      <app-song-child 
         [songToFind]="p">
       </app-song-child>
-
-
+    </li>
+  </ol>
 
 
 </ng-container> 
