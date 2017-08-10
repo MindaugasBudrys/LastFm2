@@ -23,11 +23,19 @@
 
 <ng-container *ngIf="topSongs"> 
 
-  LOL  xd
-  <h2> List contains: {{topSongs.length}} songs and artists</h2>
-      <app-song-child *ngFor="let p of topSongs"
+
+
+
+<h2> List contains: {{topSongs.length}} songs and artists</h2>
+  <ul>   
+    <li *ngFor="let p of topSongs; let i = index">  {{i}}
+      <app-song-child 
         [songToFind]="p">
       </app-song-child>
+    </li>
+</ul>
+  
+
 
 
 
