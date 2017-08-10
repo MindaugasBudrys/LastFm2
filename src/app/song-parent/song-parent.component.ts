@@ -12,10 +12,6 @@ export class SongParentComponent implements OnInit {
     nameList = RANDOM_SONGS;
 
 
-    // nameList = "XD";
-    // name2 = 'THE ALMIGHTY MASTER';
-
-
   constructor() { }
 
   ngOnInit() {

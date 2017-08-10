@@ -19,3 +19,17 @@
   </tr>
   </tbody>
 </table>
+
+
+<ng-container *ngIf="topSongs"> 
+
+  LOL  xd
+  <h2> List contains: {{topSongs.length}} songs and artists</h2>
+      <app-song-child *ngFor="let p of topSongs"
+        [songToFind]="p">
+      </app-song-child>
+
+
+
+
+</ng-container> 

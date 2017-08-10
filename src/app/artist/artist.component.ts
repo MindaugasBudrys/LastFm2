@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Artist} from './artist';
 import {ArtistService} from './artist.service';
 import {ActivatedRoute} from '@angular/router';
+import { Song } from '../song/song';
+
 
 @Component({
   selector: 'app-artist',
@@ -13,6 +15,7 @@ export class ArtistComponent implements OnInit {
   public id;
 
   public artist_info: Artist;
+  public topSongs = new Array<Song>();
 
   constructor(private artistService: ArtistService,
               private activatedRoute: ActivatedRoute) { }
@@ -26,6 +29,15 @@ export class ArtistComponent implements OnInit {
         error => console.log(error)
       );
     });
+
+
+
+    this.artistService.getTopTracks(this.id).subscribe(
+        data => { this.topSongs = data.toptracks.track; },
+        error => console.log(error)
+    );
+
+
     
   }
 
