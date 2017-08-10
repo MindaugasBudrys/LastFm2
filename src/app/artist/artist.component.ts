@@ -33,7 +33,7 @@ export class ArtistComponent implements OnInit {
 
 
     this.artistService.getTopTracks(this.id).subscribe(
-        data => { this.topSongs = data.toptracks.track; },
+        data => { this.topSongs = data.toptracks.track.slice(0,5);  },
         error => console.log(error)
     );
 
