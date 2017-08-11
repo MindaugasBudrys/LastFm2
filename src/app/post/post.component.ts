@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Post} from './post';
-import {PostService} from './post.service';
+import { Post } from './post';
+import { PostService } from './post.service';
+import { SearchService } from '../search/search.service';
 
 @Component({
   selector: 'app-post',
@@ -8,13 +9,34 @@ import {PostService} from './post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-  results = new Array<Post>();
+  topChartResults = new Array<Post>();
+  searchResults = new Array<Post>();
 
-  constructor(private postService: PostService) { }
+  displayTop: boolean = true;
+  searchSong: string = '';
+
+  constructor(private postService: PostService, 
+              private searchService: SearchService) { }
+
   ngOnInit() {
     this.postService.getAll().subscribe(
-      data => { this.results = data.tracks.track; },
+      data => { this.topChartResults = data.tracks.track; },
       error => console.log(error)
     );
   }
+
+  onClicked(toSearch: string) {
+    this.searchService.searchTrack(toSearch).subscribe(
+      data => { this.searchResults = data.results.trackmatches.track; },
+      error => console.log(error)
+    )
+
+    //this.searchResults = this.sear
+
+
+    this.displayTop = false;
+    console.log('post component search event triggered with string: ' + toSearch + '. also searchSong is: ' + this.searchSong);
+  }
+
+
 }

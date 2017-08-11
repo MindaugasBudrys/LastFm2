@@ -13,6 +13,7 @@ import { ArtistComponent } from './artist/artist.component';
 import { SongComponent } from './song/song.component';
 import { SongChildComponent } from './song-child/song-child.component';
 import { SongParentComponent } from './song-parent/song-parent.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -24,7 +25,8 @@ import { SongParentComponent } from './song-parent/song-parent.component';
     ArtistComponent,
     SongComponent,
     SongChildComponent,
-    SongParentComponent
+    SongParentComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

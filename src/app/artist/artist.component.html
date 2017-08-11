@@ -24,21 +24,21 @@
 <ng-container *ngIf="topSongs"> 
 
 
-<ng-container *ngIf="display">
-  BUTTON WAS PRESSED FROM CHILD COMPONENT
-</ng-container>
-  
+  <ng-container *ngIf="display">
+    BUTTON WAS PRESSED FROM CHILD COMPONENT
+  </ng-container>
+    
 
 
-<h2> List contains: {{topSongs.length}} songs and artists</h2>
-  <ol>   
-    <li *ngFor="let p of topSongs; let i = index">
-      <app-song-child 
-        [songToFind]="p"
-        (onClicked)="onClicked($event)">
-      </app-song-child>
-    </li>
-</ol>
+  <h2> List contains: {{topSongs.length}} songs and artists</h2>
+    <ol>   
+      <li *ngFor="let p of topSongs; let i = index">
+        <app-song-child 
+          [songToFind]="p"
+          (onClicked)="onClicked($event)">
+        </app-song-child>
+      </li>
+  </ol>
   
 
 

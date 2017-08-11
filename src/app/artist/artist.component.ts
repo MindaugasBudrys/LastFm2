@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Artist} from './artist';
-import {ArtistService} from './artist.service';
-import {ActivatedRoute} from '@angular/router';
+import { Artist } from './artist';
+import { ArtistService } from './artist.service';
+import { ActivatedRoute } from '@angular/router';
 import { Song } from '../song/song';
 
 
@@ -38,9 +38,9 @@ export class ArtistComponent implements OnInit {
     );
   }
 
-    onClicked(toDisplay: boolean) {
-      toDisplay ? this.display = true : this.display = false;
-      console.log('artist component event triggered');
-    }
+  onClicked(toDisplay: boolean) {
+    toDisplay ? this.display = true : this.display = false;
+    console.log('artist component event triggered');
+  }
 
 }
