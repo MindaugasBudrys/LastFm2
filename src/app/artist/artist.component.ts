@@ -17,7 +17,8 @@ export class ArtistComponent implements OnInit {
   public artist_info: Artist;
   public topSongs = new Array<Song>();
 
-  public display: boolean = false;
+  //boolean from button to show/hide text
+  public showText: boolean = false;
 
   constructor(private artistService: ArtistService,
               private activatedRoute: ActivatedRoute) { }
@@ -38,8 +39,9 @@ export class ArtistComponent implements OnInit {
     );
   }
 
+  //button press to show/hide text
   onClicked(toDisplay: boolean) {
-    toDisplay ? this.display = true : this.display = false;
+    toDisplay ? this.showText = true : this.showText = false;
     console.log('artist component event triggered');
   }
 

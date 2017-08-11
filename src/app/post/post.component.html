@@ -1,73 +1,30 @@
- <!-- <table *ngIf="results" border="1">
-  <thead>
-  <tr>
-    <th>Name</th>
-    <th>Artist name</th>
-    
-    <th>Artist Mbid</th>
-    <th>Mbid</th>
+<h2>Song to search for: "{{searchSong}}"! </h2>
+<br>
 
-    <th>Playcount</th>
-    <th>Listeners</th>
+<input type='text' [(ngModel)]="searchSong" placeholder="Song name" name="searchSong">
 
-    <th>URL</th>
-
-            
-
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let p of results">
-    <td> <a routerLink="/song/{{p.artist.name}}/{{p.name}}">{{p.name}} </a> </td>
-
-    <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.artist.name}} </a> </td>
-
-    
-    <td>{{p.artist.mbid}}</td>
-    <td>{{p.mbid}}</td>
-
-    <td>{{p.playcount}}</td>
-    <td>{{p.listeners}}</td>
-
-    <td>{{p.url}}</td>
-        
-
-  </tr>
-  </tbody>
-</table>  -->
-
-
-Song to search for: "{{searchSong}}"!
-<p>
-<input [(ngModel)]="searchSong" placeholder="Song name">
-</p>
-
-<button (click)="onClicked(searchSong)"> search </button>
-
-
+<button [disabled]="!searchSong" (click)="onClicked(searchSong)"> Search </button>
 
  <ng-container *ngIf="topChartResults"> 
-<!-- 
-  <div *ngFor="let p of results">
-    {{p.name}} .... {{p.artist.name}}
-
-  </div> -->
+  <br>
   (this is post component)
 
+  <!-- displays top chart results -->
   <ng-container *ngIf="displayTop">
     <h2> List contains: {{topChartResults.length}} songs and artists</h2>
     <ol>
       <li *ngFor="let p of topChartResults">
         
         <app-song-child 
-          [songToFind]="p">
+          [songToFind]="p.name"
+          [artistToFind]="p.artist.name">
         </app-song-child>
       </li>
     </ol>
 
   </ng-container>
 
-
+  <!-- displays search results, if searched -->
   <ng-container *ngIf="searchResults"> 
     <ng-container *ngIf="displayTop==false">
       <h2> List contains: {{searchResults.length}} songs and artists</h2>
@@ -75,7 +32,8 @@ Song to search for: "{{searchSong}}"!
         <li *ngFor="let p of searchResults">
           
           <app-song-child 
-            [songToFind]="p">
+            [songToFind]="p.name"
+            [artistToFind]="p.artist">
           </app-song-child>
         </li>
       </ol>

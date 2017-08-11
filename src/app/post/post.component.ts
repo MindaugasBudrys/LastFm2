@@ -31,9 +31,7 @@ export class PostComponent implements OnInit {
       error => console.log(error)
     )
 
-    //this.searchResults = this.sear
-
-
+    //disables top chart results if searched for song
     this.displayTop = false;
     console.log('post component search event triggered with string: ' + toSearch + '. also searchSong is: ' + this.searchSong);
   }

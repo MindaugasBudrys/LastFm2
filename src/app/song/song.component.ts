@@ -13,6 +13,7 @@ export class SongComponent implements OnInit {
   public artist_name: string = '';
   public song_name: string = '';
 
+  //result from song service
   public song_info: Song;
 
   constructor(private songService: SongService,

@@ -8,11 +8,6 @@
   </thead>
   <tbody>
   <tr>
-    <!--
-    <td> <a routerLink="/artist/{{p.artist.mbid}}">{{p.name}} lol {{p.artist.mbid}} </a>
-
-    </td>
-    -->
     <td>{{artist_info.name}}</td>
     <td>{{artist_info.mbid}}</td>
     <td>{{artist_info.url}}</td>
@@ -21,28 +16,23 @@
 </table>
 
 
-<ng-container *ngIf="topSongs"> 
+<!-- if top song results exist, display this -->
+<ng-container *ngIf="topSongs">
 
-
-  <ng-container *ngIf="display">
+  <!-- if button was pressed from child component, display this -->
+  <ng-container *ngIf="showText">
     BUTTON WAS PRESSED FROM CHILD COMPONENT
   </ng-container>
     
-
-
   <h2> List contains: {{topSongs.length}} songs and artists</h2>
     <ol>   
       <li *ngFor="let p of topSongs; let i = index">
         <app-song-child 
-          [songToFind]="p"
-          (onClicked)="onClicked($event)">
+          [songToFind]="p.name"
+          [artistToFind]="p.artist.name"
+          (onClicked)="onClicked($event)"> <!-- button press event -->
         </app-song-child>
       </li>
   </ol>
   
-
-
-
-
-
 </ng-container> 
