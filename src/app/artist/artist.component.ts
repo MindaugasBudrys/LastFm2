@@ -31,16 +31,11 @@ export class ArtistComponent implements OnInit {
         error => console.log(error)
       );
     });
-
-
-
+    
     this.artistService.getTopTracks(this.id).subscribe(
         data => { this.topSongs = data.toptracks.track.slice(0,5);  },
         error => console.log(error)
     );
-    
-
-    
   }
 
     onClicked(toDisplay: boolean) {
