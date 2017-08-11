@@ -12,11 +12,6 @@ import { PostComponent } from './post/post.component';
 import { ArtistComponent } from './artist/artist.component';
 import { SongComponent } from './song/song.component';
 import { SongChildComponent } from './song-child/song-child.component';
-import { SongParentComponent } from './song-parent/song-parent.component';
-import { SearchComponent } from './search/search.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -24,9 +19,7 @@ import { SearchComponent } from './search/search.component';
     PostComponent,
     ArtistComponent,
     SongComponent,
-    SongChildComponent,
-    SongParentComponent,
-    SearchComponent
+    SongChildComponent
   ],
   imports: [
     BrowserModule,

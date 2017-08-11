@@ -1,5 +1,4 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-import { Hero } from '../hero';
 import { Song } from '../song/song';
 import { SongService } from '../song/song.service';
 import { Post } from '../post/post';
@@ -29,7 +28,7 @@ export class SongChildComponent implements OnInit {
     );
   }
 
-  //button press event
+  //button press to display text in parent component
   clicked(toDisplay: boolean){
     this.onClicked.emit(toDisplay);
     console.log("BUTTON WAS CLICKED inside song-child component" + toDisplay);

@@ -6,7 +6,6 @@ import { ArtistComponent} from './artist/artist.component';
 import { SongService } from './song/song.service';
 import { SongComponent } from './song/song.component'
 import { SearchService} from './search/search.service';
-import { SearchComponent } from './search/search.component';
 
 @Component({
   selector: 'app-root',
@@ -15,5 +14,5 @@ import { SearchComponent } from './search/search.component';
   providers: [PostService, ArtistService, SongService, SearchService]
 })
 export class AppComponent {
-  title = 'app works!!!!';
+  title = 'LAST FM API';
 }

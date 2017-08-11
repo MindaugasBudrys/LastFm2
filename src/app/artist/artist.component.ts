@@ -34,6 +34,7 @@ export class ArtistComponent implements OnInit {
     });
     
     this.artistService.getTopTracks(this.id).subscribe(
+      //gets top songs from artist and only takes top 5 results
         data => { this.topSongs = data.toptracks.track.slice(0,5);  },
         error => console.log(error)
     );
@@ -41,6 +42,7 @@ export class ArtistComponent implements OnInit {
 
   //button press to show/hide text
   onClicked(toDisplay: boolean) {
+    //if toDisplay is true, sets this.showText to true, otherwise to false
     toDisplay ? this.showText = true : this.showText = false;
     console.log('artist component event triggered');
   }
