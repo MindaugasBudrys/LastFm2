@@ -40,6 +40,9 @@ export class PostComponent implements OnInit {
 
         //disables top chart results if searched for song
         this.displayTop = false;
+
+        this.searchMovieResults = null;
+
         console.log('post component search event triggered with string: ' + stringToSearch + '. also searchString is: ' + this.searchString);
       }
     else if (typeToSearch == 'movies')
@@ -51,6 +54,8 @@ export class PostComponent implements OnInit {
 
         //disables top chart results if searched for song
         this.displayTop = false;
+
+        this.searchSongResults = null;
         console.log('post component search event triggered with string: ' + stringToSearch + '. also searchString is: ' + this.searchString);
       }
 
