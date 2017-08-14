@@ -35,6 +35,4 @@ export class PostComponent implements OnInit {
     this.displayTop = false;
     console.log('post component search event triggered with string: ' + toSearch + '. also searchSong is: ' + this.searchSong);
   }
-
-
 }
