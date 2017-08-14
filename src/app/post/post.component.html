@@ -1,9 +1,14 @@
-<h2>Song to search for: "{{searchSong}}"! </h2>
+<h2>Song to search for: "{{searchString}}"! </h2>
 <br>
 
-<input type='text' [(ngModel)]="searchSong" placeholder="Song name" name="searchSong">
+<select [(ngModel)]="selectedValue">
+  <option value="songs">Songs</option>
+  <option value="movies">Movies</option>
+</select>
 
-<button [disabled]="!searchSong" (click)="onClicked(searchSong)"> Search </button>
+<input type='text' [(ngModel)]="searchString" placeholder="Song name" name="searchString">
+
+<button [disabled]="!searchString" (click)="onClicked(searchString, selectedValue)"> Search </button>
 
  <ng-container *ngIf="topChartResults"> 
   <br>
@@ -23,22 +28,49 @@
     </ol>
 
   </ng-container>
+</ng-container> 
+  <!-- displays song search results, if searched -->
+<ng-container *ngIf="searchSongResults"> 
+  <ng-container *ngIf="displayTop==false">
+    <h2> List contains: {{searchSongResults.length}} songs and artists</h2>
+    <ol>
+      <li *ngFor="let p of searchSongResults">
+        
+        <app-song-child 
+          [songToFind]="p.name"
+          [artistToFind]="p.artist">
+        </app-song-child>
+      </li>
+    </ol>
 
-  <!-- displays search results, if searched -->
-  <ng-container *ngIf="searchResults"> 
+  </ng-container>
+</ng-container>
+
+<ng-container *ngIf="searchMovieResults"> 
     <ng-container *ngIf="displayTop==false">
-      <h2> List contains: {{searchResults.length}} songs and artists</h2>
-      <ol>
-        <li *ngFor="let p of searchResults">
-          
-          <app-song-child 
-            [songToFind]="p.name"
-            [artistToFind]="p.artist">
-          </app-song-child>
-        </li>
-      </ol>
-
+      <table *ngIf="searchMovieResults" border="1">
+        <thead>
+        <tr>
+          <th>Movie title</th>
+          <th>Release date</th>
+          <th>Vote average</th>
+          <th>ID</th>
+          <th>Overview</th>
+        </tr>
+        </thead>
+      
+        <tbody>
+        <tr *ngFor="let p of searchMovieResults">
+          <td> {{p.title}} </td>
+          <td> {{p.release_date}} </td>
+          <td> {{p.vote_average}} </td>
+          <td> {{p.id}} </td>
+          <td> {{p.overview}} </td>
+        </tr>
+        </tbody>
+      </table>
     </ng-container>
   </ng-container>
 
-</ng-container> 
+
+
